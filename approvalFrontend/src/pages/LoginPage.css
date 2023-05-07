@@ -1,0 +1,53 @@
+body{
+    background-color: #000722;
+    font-family: 'Poppins';
+    transition: all 0.3s ease-in-out;
+}
+
+
+.form{
+    width: 30vw;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    gap:3vh;
+    margin-top: 20vh;
+    background-color:#71cfdd ;
+    border-radius: 15px;
+    font-size: 36px;
+}
+
+.form input{
+    all: unset;
+    font-size: 30px;
+    width: 20vw;
+    height: 7vh;
+    text-indent: 2vw;
+    border-radius: 15px;
+    background-color: #e1e1e1;
+    box-shadow: 1px 2px 1px 0px gray;
+    transition: all 0.3s ease-in-out;
+}
+
+.form input:hover,.form input:focus{
+    box-shadow: 1px 2px 3px 1px rgb(93, 93, 93);
+}
+
+.form button{
+    border: none;
+    font-size: 24px;
+    width: 6vw;
+    height: 5vh;
+    border-radius:15px ;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.form button:hover{
+    cursor: pointer;
+    background-color: rgb(204, 204, 204);
+    box-shadow: 1px 2px 3px 1px rgb(93, 93, 93);
+
+}

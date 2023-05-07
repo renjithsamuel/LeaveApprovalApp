@@ -1,0 +1,115 @@
+#dialog-box {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.097);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+  }
+  
+  #dialog-content {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.097);
+    backdrop-filter: blur(30px);
+    padding: 20px;
+    width: 30vw;
+    height: 60vh;
+    border-radius: 15px;
+    
+  }
+  
+  #dialog-content h2 {
+    margin-top: 0;
+  }
+  
+  #dialog-content label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 0.5vw;
+  }
+  
+  #dialog-content input,
+  #dialog-content textarea {
+    border: none;
+    box-shadow: 1px 1px 1px 1px gray;
+    margin-left: 2vw;
+    width: 80%;
+    padding: 5px;
+    height: 5vh;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-indent: 10px;
+  }
+  
+  #dialog-content textarea {
+    padding: 8px;
+    height: 7vh;
+  }
+  
+  #dialog-content input:focus,
+  #dialog-content textarea:focus {
+    outline: none;
+    box-shadow: 1px 1px 1px 2px gray;
+  }
+  
+  #dialog-content button {
+    background-color: #d4d4d4;
+    margin-left: 6vw;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+  }
+  
+  #dialog-content button:hover {
+    cursor: pointer;
+    background-color: #888;
+  }
+
+
+  .approvalPageHead{
+    padding: 1vh;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    color:#6948a4;
+  }
+  .approvalHeader{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .approvalPageHead button{
+    border: none;
+    font-size: 15px;
+    width: 6vw;
+    height: 5vh;
+    border-radius:15px ;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .approvalPageHead button:hover{
+    cursor: pointer;
+    background-color: rgb(177, 177, 177);
+    box-shadow: 1px 2px 3px 1px rgb(93, 93, 93);
+  }
+
+  .approvalsWrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 6vh;
+    font-size: 22px;
+  
+  }
+
+  .welcome{
+    font-size:30px;
+    color:#71cfdd;
+  }
