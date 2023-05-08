@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const config = require('config');
 const cors = require('cors');
 const helmet = require('helmet');
 const app = express();
@@ -9,7 +10,7 @@ let port = process.env.PORT || 3000;
 
 // connect with mongoDB
 // let mongoDBString = 'mongodb://0.0.0.0:27017/approval';
-let mongoDBString = `mongodb+srv://${config.get('DBNAME')}:${config.get('DBPASSWORD')}@cluster0.gp8dend.mongodb.net/Library?retryWrites=true&w=majority`;
+let mongoDBString = `mongodb+srv://${config.get('DBNAME')}:${config.get('DBPASSWORD')}@cluster0.gp8dend.mongodb.net/LeavePortal?retryWrites=true&w=majority`;
 
 mongoose.connect(mongoDBString,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{console.log("Connected to mongoDB!");})

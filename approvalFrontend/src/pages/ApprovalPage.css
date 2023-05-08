@@ -77,7 +77,16 @@
   }
 
   .welcome{
+    width: fit-content;
     font-size:35px;
+    font-weight: 500;
+    color:#6948a4;
+  }
+
+  .ntd{
+    font-size:35px;
+    margin-left: 30vw;
+    margin-top: 10vh;
     font-weight: 500;
     color:#6948a4;
   }
@@ -99,7 +108,8 @@
 
 
   .addbtn{
-    margin-left: 50vw;
+    position: absolute;
+    right: 9vw;
     display: flex;
     align-items: center;
     justify-content: center;

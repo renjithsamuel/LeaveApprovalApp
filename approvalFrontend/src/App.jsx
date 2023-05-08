@@ -68,7 +68,6 @@ function App() {
           reason : reason 
         }
         await sendHTTPRequest(`http://localhost:3000/api/v1/approval`,'POST',obj).then((res)=>{
-          alert('Posted successully!');
           // console.log(res.data);
           setApprovals([...approvals,res.data]);
         }).catch((err)=>alert('Something went wrong!' + err.message));
@@ -175,7 +174,7 @@ function App() {
   }
 
   const handleRegsiter = async () => {
-
+    
     if(!(username.current.value) || !(password.current.value) ){
       alert('Please enter valid credentials')
       return;
@@ -193,15 +192,14 @@ function App() {
         password: password.current.value,
         isAdmin: false
       }).then((v) => {
-        if(v.status)
-          setIsLogin(0)
-
-        else 
-          setInValidText("Server Error Please Try Again");
-
+        if(v.status){
+          console.log('here');
+          setIsLogin(1)}
+        else {
+          setInValidText("Server Error Please Try Again");}
       })
     }
-    else{
+    else if(gotUser){
       setInValidText("UserName Already Exist");
     }
   }

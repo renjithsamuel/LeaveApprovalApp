@@ -43,7 +43,7 @@ function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatu
         {user.isAdmin?
                 <div className="approvalsWrapper">
                     <div className="adminWrapper">
-                        {
+                        {approvals.length==0?<div className="ntd">Nothing to display</div>:
                             approvals.map((elem,index)=>{
                                return <ApprovalCardAdmin
                                key={index}
@@ -63,7 +63,7 @@ function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatu
                 :            
                 <div className="userAllWrapper">
                     <div className="userWrapper">
-                        {
+                        {approvals.length==0?<div className="ntd">Nothing to display</div>:
                             approvals.map((elem, index)=>{
                                return <ApprovalCardUser
                                 key={index}
