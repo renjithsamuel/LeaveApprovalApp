@@ -33,20 +33,32 @@
 }
 
 .UserFromDateContent{
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
 }
 
+
+.rightArrow img{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 15px;
+    /* width: 25px; */
+}
 
 .UserToDate{
     display: flex;
-    margin-left: 5vw;
+    /* margin-left: 5vw; */
+}
+
+.UserReason{
+    font-weight: 500;
 }
 
 .UserToDateContent{
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
 }
 
 .UserReasonContent{
+    font-weight: 400;
     width: 45vw;
     height: fit-content;
     padding: 1vh;
@@ -54,7 +66,7 @@
     word-wrap: break-word;
     margin-left: 3vw;
     font-size: 18px;
-    /* background-color: rgb(217, 217, 217); */
+    background-color: rgba(217, 217, 217, 0.567);
     border-radius: 10px;
 }
 
@@ -122,3 +134,4 @@
     background-color: #71cfdd;
     box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
 }
+

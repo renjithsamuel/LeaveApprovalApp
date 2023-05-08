@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import './ApprovalCardAdmin.css';
 import cancelicon from '../assets/cancel-icon.svg';
 import accepticon from '../assets/tick-icon.svg';
+import rightArrow from '../assets/right-arrow-icon.svg';
 
 function ApprovalCardAdmin({approval,username,fromDate,toDate,reason,approvalStatus,userId,approvalId}) {
     const  [newToDate,setNewToDate] = useState('');
@@ -27,7 +28,6 @@ function ApprovalCardAdmin({approval,username,fromDate,toDate,reason,approvalSta
     // },[approvalStatus[0],approval])
     
     return ( 
-
     <div className="AdminCardWrapper" style={{backgroundColor:(approval=='pending')?'#aaafbf':(approval=='accepted')?'#97dee8':(approval=='rejected')?'#b196e3':'#e6e2e1'}}>
         <div className="adminleft">
             <div className="username">
@@ -35,12 +35,13 @@ function ApprovalCardAdmin({approval,username,fromDate,toDate,reason,approvalSta
             </div>
             <div className="dates">
                 <div className="fromDate">
-                From Date  :
                 <div className="fromDateContent">{newFromDate}</div>
                 </div>
-            
+                <div className="rightArrow">
+                    <img src={rightArrow} alt="to" />
+                </div>
                 <div className="toDate">
-                To Date    :<div className="toDateContent">{newToDate}</div>
+                <div className="toDateContent">{newToDate}</div>
                 </div>
             </div>
             <div className="reason">

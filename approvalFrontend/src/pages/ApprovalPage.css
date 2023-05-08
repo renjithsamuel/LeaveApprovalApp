@@ -2,6 +2,13 @@
     margin-bottom: 6vh;
     }
 
+    .backgroundImg{ 
+      z-index: -10;
+      position: absolute;
+      left: 75vw;
+      top: 12vh;
+    }
+
   .approvalPageHead{
     background-color: transparent;
     padding: 2vh;
@@ -11,6 +18,7 @@
     color:#6948a4;
   }
   .approvalHeader{
+    height: 9vh;
     margin-left:4vw ;
     font-size: 40px;
     font-weight: bold;
@@ -36,8 +44,8 @@
   }
 
   .logoutBtn img{
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     border-radius:15px ;
     transform: scale(1);
     transition: all 0.3s ease-in-out;
@@ -92,7 +100,7 @@
   }
 
   .adminMode{
-    margin-top: 0.7vh;
+    margin-top: 1vh;
     margin-left: 1vw;
     width: 5vw;
     height: 5vh;

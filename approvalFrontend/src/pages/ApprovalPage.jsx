@@ -4,12 +4,14 @@ import ApprovalCardAdmin from "../components/ApprovalCardAdmin";
 import './ApprovalPage.css';
 import addicon from '../assets/add-icon.svg'
 import logOutIcon from '../assets/logout-icon.svg'
+import backgroundImg from '../assets/background.svg'
 
 function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatus,deleteApproval}) {
-    // console.log(approvals);
-    // console.log(user);
 
     return ( <div className="approvalPageWholeWrapper">
+            <div className="backgroundImg">
+            <img src={backgroundImg} alt="" />
+            </div>
         <div className="approvalPageHead">
             <div className="approvalHeader">LeavePortal</div>
             <div className="logoutBtn" onClick={handleLogOut}>

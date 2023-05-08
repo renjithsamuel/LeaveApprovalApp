@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import './ApprovalCardUser.css'
 import cancelicon from '../assets/cancel-icon.svg';
+import rightArrow from '../assets/right-arrow-icon.svg';
+
 
 function ApprovalCardUser({approval,fromDate,toDate,reason,approvalStatus,userId,approvalId,deleteApproval}) {
     const  [newToDate,setNewToDate] = useState('');
@@ -25,12 +27,14 @@ function ApprovalCardUser({approval,fromDate,toDate,reason,approvalStatus,userId
         <div className="UserLeft">
             <div className="UserDates">
                 <div className="UserFromDate">
-                From Date  :
+               
                 <div className="UserFromDateContent">{newFromDate}</div>
                 </div>
-            
+                        <div className="rightArrow">
+                            <img src={rightArrow} alt="to" />
+                        </div>
                 <div className="UserToDate">
-                To Date    :<div className="UserToDateContent">{newToDate}</div>
+                <div className="UserToDateContent">{newToDate}</div>
                 </div>
             </div>
             <div className="UserReason">

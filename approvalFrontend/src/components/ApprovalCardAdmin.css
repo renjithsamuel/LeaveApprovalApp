@@ -24,7 +24,7 @@
 }
 
 .username{
-
+    font-weight: 500;
 }
 
 .username::after{
@@ -52,21 +52,26 @@
 
 .toDate{
     display: flex;
-    margin-left: 5vw;
 }
 
 .toDateContent{
+    /* margin-left: 1vw; */
+}
+
+.reason{
     margin-left: 1vw;
+    font-weight: 500;
 }
 
 .reasonContent{
+    font-weight: 400;
     width: 45vw;
     height: fit-content;
     padding: 1vh;
     text-indent: 2vw;
     word-wrap: break-word;
     margin-left: 3vw;
-    background-color: rgb(217, 217, 217);
+    background-color: rgba(217, 217, 217, 0.567);
     border-radius: 10px;
 }
 
@@ -131,5 +136,3 @@
     background-color: #00cae9;
     box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
 }
-
-

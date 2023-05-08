@@ -20,6 +20,7 @@ body{
     background-color: #000722;
     font-family: 'Poppins';
     transition: all 0.3s ease-in-out;
+    overflow-x: hidden;
 }
 
 
