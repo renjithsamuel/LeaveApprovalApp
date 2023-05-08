@@ -19,7 +19,7 @@ function App() {
       let promise = new Promise(async (resolve,reject)=>{
         await fetch(url,{method:method,body:JSON.stringify(data),headers:{"Content-Type": "application/json",}})
             .then((res)=> {
-              if('http://localhost:3000/api/v1/checkUser' === url){
+              if('https://leaveportal.onrender.com/api/v1/checkUser' === url){
                 sessionStorage.setItem("token", res.headers.get('token'));
             }
               return res.json()
@@ -67,7 +67,7 @@ function App() {
           toDate : todate,
           reason : reason 
         }
-        await sendHTTPRequest(`http://localhost:3000/api/v1/approval`,'POST',obj).then((res)=>{
+        await sendHTTPRequest(`https://leaveportal.onrender.com/api/v1/approval`,'POST',obj).then((res)=>{
           // console.log(res.data);
           setApprovals([...approvals,res.data]);
         }).catch((err)=>alert('Something went wrong!' + err.message));
@@ -91,7 +91,7 @@ function App() {
   useEffect(()=>{
     async function handleApprovals() {
       try {
-        const response = await fetch(`http://localhost:3000/api/v1/${currentUser.isAdmin ? 'approval' : `approvalByUser/${currentUser._id}`}`, {
+        const response = await fetch(`https://leaveportal.onrender.com/api/v1/${currentUser.isAdmin ? 'approval' : `approvalByUser/${currentUser._id}`}`, {
           method: 'GET',
           headers: {
             'token': sessionStorage.getItem('token')
@@ -114,7 +114,7 @@ function App() {
 
   // approval status handling
     const handleApprovalStatus = async ({status,approvalId,reason}) =>{
-      await sendHTTPRequest(`http://localhost:3000/api/v1/approval/${approvalId}`,'PATCH',{
+      await sendHTTPRequest(`https://leaveportal.onrender.com/api/v1/approval/${approvalId}`,'PATCH',{
         approval : status,
         userId : currentUser._id,
         reason : reason
@@ -138,7 +138,7 @@ function App() {
   // deleteApproval
   async function deleteCurrentApproval(approvalId){
     // console.log(approvalId);
-    await sendHTTPRequest(`http://localhost:3000/api/v1/approval/${approvalId}`,'DELETE')
+    await sendHTTPRequest(`https://leaveportal.onrender.com/api/v1/approval/${approvalId}`,'DELETE')
     .then((res)=>{if(res.success==true){console.log("Approval deleted successfully!");
     setApprovals(approvals.filter((e) => {
       if (e._id !== approvalId) {
@@ -155,7 +155,7 @@ function App() {
   //get Users
   useEffect(()=>{
       async function getUsers(){
-         return await sendHTTPRequest('http://localhost:3000/api/v1/user','GET')
+         return await sendHTTPRequest('https://leaveportal.onrender.com/api/v1/user','GET')
       }
       getUsers().then((v)=> setUsers(v.data));
       
@@ -163,7 +163,7 @@ function App() {
 
   //Handlers
   const handleLogin = async () => {
-    let user = await sendHTTPRequest("http://localhost:3000/api/v1/checkUser", 'POST', {
+    let user = await sendHTTPRequest("https://leaveportal.onrender.com/api/v1/checkUser", 'POST', {
       username: username.current.value,
       password: password.current.value,
     })
@@ -187,7 +187,7 @@ function App() {
       }
     })
     if(!gotUser){
-      await sendHTTPRequest('http://localhost:3000/api/v1/user', 'POST', {
+      await sendHTTPRequest('https://leaveportal.onrender.com/api/v1/user', 'POST', {
         username: username.current.value,
         password: password.current.value,
         isAdmin: false

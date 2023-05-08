@@ -3,7 +3,7 @@ import ApprovalCardUser from "../components/ApprovalCardUser";
 import ApprovalCardAdmin from "../components/ApprovalCardAdmin";
 import './ApprovalPage.css';
 import addicon from '../assets/add-icon.svg'
-import logOutIcon from '../assets/logOut-icon.svg'
+import logOutIcon from '../assets/logout-icon.svg'
 
 function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatus,deleteApproval}) {
     // console.log(approvals);

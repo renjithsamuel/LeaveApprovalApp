@@ -41,7 +41,7 @@ app.post('/api/v1/user',postApprovalUser);
 app.post('/api/v1/checkUser',checkUser);
 
 // health check
-app.get('api/v1/health',loggerFunc,(req,res,next)=>{
+app.get('/api/v1/health',loggerFunc,(req,res,next)=>{
     return res.status(200).json({
         status : "success",
         message : "Everything works fine!"
