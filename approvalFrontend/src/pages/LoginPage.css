@@ -71,3 +71,28 @@ body{
     box-shadow: 1px 2px 3px 1px rgb(93, 93, 93);
 
 }
+
+
+::-webkit-scrollbar {
+  /* display: none; */
+  width: 2px;
+  border-radius: 30px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0173a3;
+  border-radius: 30px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #011462;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #001b87;
+}
