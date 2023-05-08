@@ -5,7 +5,6 @@ var jwt = require('jsonwebtoken');
 const rateLimit = require("express-rate-limit");
 
 exports.loggerFunc = async (req,res,next) => {
-    console.log(req.method);
     if(req.method == 'GET' || req.method == 'POST' ||req.method == 'PATCH' ||req.method == 'PUT' || req.method == 'DELETE'){
 
         console.log(`${req.method} is currently logging!`);
@@ -20,7 +19,7 @@ exports.loggerFunc = async (req,res,next) => {
 }
 
 exports.checkAdmin = async (req,res,next) => {
-    console.log(req.headers.token);
+    // console.log(req.headers.token);
     if(!req.headers.token) return res.status(404).send("Token not Found")
     
     try{
@@ -46,7 +45,7 @@ exports.apiLimiter = rateLimit({
 
 exports.getApproval =async (req,res,next) => {
     try {
-        console.log('getting approval');
+        // console.log('getting approval');
         let Approvals = await approvals.find().populate("userId",["username"]);
         if(!Approvals){
             return res.status(400).json({
@@ -68,12 +67,12 @@ exports.getApproval =async (req,res,next) => {
 };
 
 exports.getApprovalByUser =async (req,res,next) => {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     try {
         let Approvals = await approvals.find({
             userId: req.params.id
         })
-        console.log(Approvals + "here!");
+        // console.log(Approvals + "here!");
         if(!Approvals){
             return res.status(400).json({
                 message : "something went wrong !",
@@ -155,14 +154,41 @@ exports.putApproval = async (req,res,next) =>{
 exports.patchApproval = async (req,res,next) => {
     let id = req.params.id;
     let patchableData = req.body;
-    if(patchableData.approval==null && patchableData.username ==null && patchableData.password ==null ){
+
+    if(patchableData.approval==null && patchableData.userId ==null && patchableData.reason ==null ){
         return res.status(400).json({
             message : "send atleast one value to update!",
             success : false
         });
     }
+    // validating user with approval
+    // try{
+    //     let userXapproval = await approvals.find({_id:id});
+    //     if(!userXapproval){
+    //         return res.status(404).json({
+    //             message : "Approval doesn't exist!",
+    //             status : false
+    //         });
+    //     }
+    //     if(userXapproval.userId != patchableData.userId){
+    //         return res.status(400).json({
+    //             message : "user doesn't match the approval",
+    //             status : false
+    //         })
+    //     }
+    // }catch(err){
+    //     return res.status(500).json({
+    //         message : 'something went wrong while validating!' + err,
+    //         status : false
+    //     })
+    // }
+    // patching the data
     try {
-        let patchData = await approvals.findByIdAndUpdate(id,req.body,{new:true});
+        let obj = {
+            approval : patchableData.approval,
+            reason : patchableData.reason
+        };
+        let patchData = await approvals.findByIdAndUpdate(id,obj,{new:true}).populate("userId",["username"]);
         if(!patchData){
             return res.status(400).json({
                 message : "something went wrong!",
@@ -189,11 +215,11 @@ exports.deleteApproval = async (req,res,next) =>{
     if(!data){
         return res.status(404).json({
             error : "cannot find document",
-            success : false
+            success : false 
         })
     }
     try{
-        let deleteData = await approvals.findByIdAndDelete(id,{new:true});
+        let deleteData = await approvals.findByIdAndDelete(id);
         if(!deleteData){
             return res.status(400).json({
                 error : "something went wrong!",

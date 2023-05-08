@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
+import './ApprovalCardAdmin.css';
+import cancelicon from '../assets/cancel-icon.svg';
+import accepticon from '../assets/tick-icon.svg';
 
-
-function ApprovalCardAdmin({approval,username,fromDate,toDate,reason}) {
-    console.log(approval);
+function ApprovalCardAdmin({approval,username,fromDate,toDate,reason,approvalStatus,userId,approvalId}) {
     const  [newToDate,setNewToDate] = useState('');
     const [newFromDate,setNewFromDate] = useState('');
     useEffect(()=>{
@@ -18,25 +19,44 @@ function ApprovalCardAdmin({approval,username,fromDate,toDate,reason}) {
             month : 'short',
             year : 'numeric'
         }));
-        console.log(newFromDate);
-        console.log(newToDate);
     },[newToDate,newFromDate]);
+
+    // useEffect(()=>{
+    //     console.log('Rerender the component');
+    //     approval = approvalStatus;
+    // },[approvalStatus[0],approval])
+    
     return ( 
 
-        <div style={{backgroundColor:(approval=='pending')?'gray':(approval=='accepted')?'green':(approval=='rejected')?'red':'white'}}>
-        <div className="username">
-            {username}
-        </div>
-        <div className="dates">
-            <div className="fromDate">
-                {newFromDate}
+    <div className="AdminCardWrapper" style={{backgroundColor:(approval=='pending')?'#aaafbf':(approval=='accepted')?'#97dee8':(approval=='rejected')?'#b196e3':'#e6e2e1'}}>
+        <div className="adminleft">
+            <div className="username">
+                Name : {username}
             </div>
-            <div className="toDate">
-                {newToDate}
+            <div className="dates">
+                <div className="fromDate">
+                From Date  :
+                <div className="fromDateContent">{newFromDate}</div>
+                </div>
+            
+                <div className="toDate">
+                To Date    :<div className="toDateContent">{newToDate}</div>
+                </div>
+            </div>
+            <div className="reason">
+            Reason   :
+            <div className="reasonContent">{reason} asd
+            </div>
             </div>
         </div>
-        <div className="reason">
-            {reason}
+        <div className="adminRight">
+            <div className="AdminapprovalStatus">{approval}</div>
+            <div className="rejectBtn" onClick={(e)=>{approvalStatus({status : 'rejected',userId:userId,approvalId:approvalId,reason:reason})}} >
+                <img src={cancelicon} alt="cancel" width={70} height={70} />
+            </div>
+            <div className="acceptBtn" onClick={(e)=>{approvalStatus({status : 'accepted',userId:userId,approvalId:approvalId,reason:reason})}}>
+                <img src={accepticon} alt="cancel" width={70} height={60} />
+            </div>
         </div>
     </div> 
     );

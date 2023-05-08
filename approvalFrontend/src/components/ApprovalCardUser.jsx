@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
+import './ApprovalCardUser.css'
+import cancelicon from '../assets/cancel-icon.svg';
 
-function ApprovalCardUser({approval,fromDate,toDate,reason}) {
+function ApprovalCardUser({approval,fromDate,toDate,reason,approvalStatus,userId,approvalId,deleteApproval}) {
     const  [newToDate,setNewToDate] = useState('');
     const [newFromDate,setNewFromDate] = useState('');
     useEffect(()=>{
@@ -16,22 +18,34 @@ function ApprovalCardUser({approval,fromDate,toDate,reason}) {
             month : 'short',
             year : 'numeric'
         }));
-        console.log(newFromDate);
-        console.log(newToDate);
     },[newToDate,newFromDate]);
     return ( 
 
-        <div style={{backgroundColor:(approval=='pending')?'gray':(approval=='accepted')?'green':'red'}}>
-        <div className="dates">
-            <div className="fromDate">
-                {newFromDate}
+        <div className="UserCardWrapper"  style={{backgroundColor:(approval=='pending')?'#aaafbf':(approval=='accepted')?'#97dee8':(approval=='rejected')?'#b196e3':'#e6e2e1'}}>
+        <div className="UserLeft">
+            <div className="UserDates">
+                <div className="UserFromDate">
+                From Date  :
+                <div className="UserFromDateContent">{newFromDate}</div>
+                </div>
+            
+                <div className="UserToDate">
+                To Date    :<div className="UserToDateContent">{newToDate}</div>
+                </div>
             </div>
-            <div className="toDate">
-                {newToDate}
+            <div className="UserReason">
+            Reason   :
+            <div className="UserReasonContent">{reason} 
+            </div>
             </div>
         </div>
-        <div className="reason">
-            {reason}
+        <div className="UserRight">
+            <div className="approvalStatus">{approval}</div>
+            <div className="deleteApproval" onClick={(e)=>{
+                deleteApproval(approvalId);
+            }}>
+                <img src={cancelicon} alt="cancel" height={50} width={50} />
+            </div>
         </div>
     </div> 
     );

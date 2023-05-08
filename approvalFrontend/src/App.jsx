@@ -9,19 +9,18 @@ function App() {
   const [inValidText, setInValidText] = useState("");
   const [isLogin, setIsLogin] = useState(1);
   const [approvals,setApprovals] = useState([]);
-
+ 
   const username = useRef();
   const password = useRef();
   
-  //
+  //send HTTP request 
   const sendHTTPRequest = (url,method,data) => {
 
       let promise = new Promise(async (resolve,reject)=>{
         await fetch(url,{method:method,body:JSON.stringify(data),headers:{"Content-Type": "application/json",}})
             .then((res)=> {
               if('http://localhost:3000/api/v1/checkUser' === url){
-                localStorage.setItem("token", res.headers.get('token'));
-
+                sessionStorage.setItem("token", res.headers.get('token'));
             }
               return res.json()
             })
@@ -63,13 +62,15 @@ function App() {
       let reason = document.getElementById('reason').value.trim();
       if((fromdate+todate+reason).includes('<script>') || todate == '' || fromdate == '' || reason == ''){alert('Enter valid book details!');return}
         else{let obj = {
-          userId : user._id,
+          userId : currentUser._id,
           fromDate : fromdate,
           toDate : todate,
           reason : reason 
         }
-        await sendHTTPRequest(`http://localhost:3000/api/v1/approval`,'POST',obj).then(()=>{
+        await sendHTTPRequest(`http://localhost:3000/api/v1/approval`,'POST',obj).then((res)=>{
           alert('Posted successully!');
+          // console.log(res.data);
+          setApprovals([...approvals,res.data]);
         }).catch((err)=>alert('Something went wrong!' + err.message));
         dialogBox.remove();
         }
@@ -94,11 +95,11 @@ function App() {
         const response = await fetch(`http://localhost:3000/api/v1/${currentUser.isAdmin ? 'approval' : `approvalByUser/${currentUser._id}`}`, {
           method: 'GET',
           headers: {
-            'token': localStorage.getItem('token')
+            'token': sessionStorage.getItem('token')
           }
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         return data;
       } catch (error) {
         console.log(error + 'here1');
@@ -112,6 +113,46 @@ function App() {
 
   },[currentUser]);
 
+  // approval status handling
+    const handleApprovalStatus = async ({status,approvalId,reason}) =>{
+      await sendHTTPRequest(`http://localhost:3000/api/v1/approval/${approvalId}`,'PATCH',{
+        approval : status,
+        userId : currentUser._id,
+        reason : reason
+      }).then((res)=>{if(res.success==true)
+        {
+          console.log("Approval updated");
+          // console.log(res.data);
+        setApprovals(approvals.map((elem)=>{
+          if(elem._id == approvalId){
+              elem = res.data
+            }
+            return elem;
+        }));
+    }
+    else{ console.log("something went wrong while updating!");}})
+      .catch((err)=>{console.log("something went wrong while updating!" + err);});
+      // console.log(response);
+    }
+    
+
+  // deleteApproval
+  async function deleteCurrentApproval(approvalId){
+    // console.log(approvalId);
+    await sendHTTPRequest(`http://localhost:3000/api/v1/approval/${approvalId}`,'DELETE')
+    .then((res)=>{if(res.success==true){console.log("Approval deleted successfully!");
+    setApprovals(approvals.filter((e) => {
+      if (e._id !== approvalId) {
+        return true; // include the approval in the filtered array
+      } else {
+        console.log('Filtered out approval:', e);
+        return false; // exclude the approval from the filtered array
+      }
+    }));
+    }else{console.log("Something Went Wrong while deleting!");}})
+    .catch((err)=>{console.log("error while deleting! "+err);})
+  }
+
   //get Users
   useEffect(()=>{
       async function getUsers(){
@@ -123,17 +164,22 @@ function App() {
 
   //Handlers
   const handleLogin = async () => {
-    
     let user = await sendHTTPRequest("http://localhost:3000/api/v1/checkUser", 'POST', {
       username: username.current.value,
       password: password.current.value,
     })
-    if(user.status){ setCurrentUser(user.data);}
+    if(user.status)
+      setCurrentUser(user.data);
 
     if(!user.status && JSON.stringify(currentUser) === "{}") setInValidText("Invalid Creds");
   }
 
   const handleRegsiter = async () => {
+
+    if(!(username.current.value) || !(password.current.value) ){
+      alert('Please enter valid credentials')
+      return;
+    }
     let gotUser = false;
     users.forEach((user)=>{
       if(user.username === username.current.value){
@@ -142,8 +188,6 @@ function App() {
       }
     })
     if(!gotUser){
-      console.log('here not got');
-
       await sendHTTPRequest('http://localhost:3000/api/v1/user', 'POST', {
         username: username.current.value,
         password: password.current.value,
@@ -159,9 +203,7 @@ function App() {
     }
     else{
       setInValidText("UserName Already Exist");
-      console.log('here');
     }
-    
   }
 
   const handleLogOut = () => {
@@ -177,13 +219,16 @@ function App() {
     setIsLogin(isLogin ^ 1);
     setInValidText("")
   }
+
   
 
   return (
     <>
       {
-        ((JSON.stringify(currentUser) !== "{}") && (localStorage.getItem('token')))
-          ?<ApprovalPage user={currentUser} handleLogOut={handleLogOut} approvals={approvals} postApproval={postApproval}/> 
+        ((JSON.stringify(currentUser) !== "{}") && (sessionStorage.getItem('token')))
+          ?<ApprovalPage user={currentUser} handleLogOut={handleLogOut} approvals={approvals} 
+          postApproval={postApproval} approvalStatus={handleApprovalStatus} 
+          deleteApproval={deleteCurrentApproval}/> 
             
           :<>
           <LoginPage isLogin={isLogin} handlers={[handleLogin, handleRegsiter, toggleForms]} refs={[username, password]}/>   

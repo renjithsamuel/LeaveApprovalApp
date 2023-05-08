@@ -70,7 +70,7 @@ exports.postApprovalUser = async (req,res,next) =>{
         });
     }
     try{
-        const postData = await approvalUsers.create(postabledata);
+        const postData = await approvalUsers.create(postabledata)
         if(!postData){
             return res.status(400).json({
                 message : "Something went wrong!",

@@ -1,18 +1,18 @@
-.AdminCardWrapper{
+.UserCardWrapper{
     border-radius: 15px;
     display: flex;
     align-items: center;
     transform: scale(1);
+    font-size: 20px;
     transition: all 0.3s ease-in-out;
-    /* width: 80vw; */
 }
 
-.AdminCardWrapper:hover{
+.UserCardWrapper:hover{
     transform: scale(1.01);
     box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
 }
 
-.adminleft{
+.UserLeft{
     color: #010e40;
     display: flex;
     flex-direction: column;
@@ -23,43 +23,30 @@
     width: 80%;
 }
 
-.username{
-
-}
-
-.username::after{
-
-    content: '';
-    display: block;
-    height: 0.1vh;
-    width: 15vw;
-    background-color: black;
-}
-
-.dates{
+.UserDates{
     display: flex;
 
 }
 
-.fromDate{
+.UserFromDate{
     display: flex;
 }
 
-.fromDateContent{
+.UserFromDateContent{
     margin-left: 1vw;
 }
 
 
-.toDate{
+.UserToDate{
     display: flex;
     margin-left: 5vw;
 }
 
-.toDateContent{
+.UserToDateContent{
     margin-left: 1vw;
 }
 
-.reasonContent{
+.UserReasonContent{
     width: 45vw;
     height: fit-content;
     padding: 1vh;
@@ -70,17 +57,37 @@
     border-radius: 10px;
 }
 
-.adminRight{
+/* .UserRight{
+    height: 15vh;
+    width: 15vw ;
+    margin-right: 5vw;
+    background-color: #01135b;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    color: #71cfdd  ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserRight:hover{
+    background-color: #001a82;
+    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
+} */
+
+
+/*  */
+.UserRight{
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 15vh;
-    width: 25vw ;
+    width: 15vw ;
     margin-right: 5vw;
     background-color: transparent;
 }
 
-.AdminapprovalStatus{
+.approvalStatus{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,48 +95,29 @@
     background-color:  #01135b;;
     color: #71cfdd  ;
     height: 75%;
-    width: 36%;
+    width: 45%;
     transition: all 0.3s ease-in-out;
 }
 
-.AdminapprovalStatus:hover{
+.approvalStatus:hover{
     cursor: default;
     background-color: #001a82;
     box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
 }
 
-.rejectBtn{
+.deleteApproval  {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    background-color: #a38ccb;
+    background-color: #a0d9e1;
     height: 75%;
-    width: 30%;
+    width: 40%;
     transition: all 0.3s ease-in-out;
 }
 
-.rejectBtn:hover{
+.deleteApproval:hover{
     cursor: pointer;
-    background-color: #6948a4;
+    background-color: #71cfdd;
     box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
 }
-
-.acceptBtn  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-    background-color: #5bd0df;
-    height: 75%;
-    width: 30%;
-    transition: all 0.3s ease-in-out;
-}
-
-.acceptBtn:hover{
-    cursor: pointer;
-    background-color: #00cae9;
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
-}
-
-
