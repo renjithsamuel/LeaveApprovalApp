@@ -8,7 +8,10 @@ const { postApprovalUser, getApprovalUsers, checkUser } = require('./controller/
 let port = process.env.PORT || 3000;
 
 // connect with mongoDB
-mongoose.connect('mongodb://0.0.0.0:27017/approval',{useNewUrlParser:true,useUnifiedTopology:true})
+// let mongoDBString = 'mongodb://0.0.0.0:27017/approval';
+let mongoDBString = `mongodb+srv://${config.get('DBNAME')}:${config.get('DBPASSWORD')}@cluster0.gp8dend.mongodb.net/Library?retryWrites=true&w=majority`;
+
+mongoose.connect(mongoDBString,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{console.log("Connected to mongoDB!");})
 .catch((err)=>{console.log("Cannot connect to mongoDB!"+err);});
 

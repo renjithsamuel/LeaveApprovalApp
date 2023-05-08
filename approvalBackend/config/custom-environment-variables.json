@@ -1,3 +1,5 @@
 {
-    "Approval_SecretKey" : "ApprovalKEY" 
+    "Approval_SecretKey" : "ApprovalKEY" ,
+    "DBNAME" : "LeavePortal_DBNAME",
+    "DBPASSWORD" : "LeavePortal_DBPASSWORD"
 }

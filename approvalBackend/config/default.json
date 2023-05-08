@@ -1,3 +1,5 @@
 {
-    "Approval_SecretKey" : "" 
+    "Approval_SecretKey" : ""  ,
+    "DBNAME" : "",
+    "DBPASSWORD" : ""
 }
