@@ -31,7 +31,7 @@ body{
     align-items:center;
     flex-direction: column;
     gap:3vh;
-    margin-top: 20vh;
+    margin-top: 0vh;
     background-color:#71cfdd ;
     border-radius: 15px;
     font-size: 36px;
@@ -55,11 +55,13 @@ body{
 
 .form button{
     border: none;
+    background-color: #e1e1e1;
     font-size: 24px;
     width: 6vw;
     height: 5vh;
     border-radius:15px ;
     transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 1px 1px rgb(93, 93, 93);
 
 }
 

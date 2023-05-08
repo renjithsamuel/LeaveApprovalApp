@@ -45,7 +45,7 @@ function App() {
         <label for="fromdate">from Date: </label>
         <input type="date" pattern="\d{4}/\d{2}/\d{2}" id="fromdate" name="fromdate" max="${new Date().toISOString().slice(0,10)}">
         <label for="todate">To Date: </label>
-        <input type="date" pattern="\d{4}/\d{2}/\d{2}" id="todate" name="todate" max="${new Date().toISOString().slice(0,10)}">
+        <input type="date" pattern="\d{4}/\d{2}/\d{2}" id="todate" name="todate">
         <label for="reason">Reason:</label>
         <textarea id="reason" name="reason"></textarea>
         <button id="add-leave">Apply Leave</button>

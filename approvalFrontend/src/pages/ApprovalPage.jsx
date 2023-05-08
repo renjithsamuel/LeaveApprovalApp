@@ -3,22 +3,45 @@ import ApprovalCardUser from "../components/ApprovalCardUser";
 import ApprovalCardAdmin from "../components/ApprovalCardAdmin";
 import './ApprovalPage.css';
 import addicon from '../assets/add-icon.svg'
+import logOutIcon from '../assets/logOut-icon.svg'
 
 function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatus,deleteApproval}) {
     // console.log(approvals);
     // console.log(user);
 
-    return ( <div>
+    return ( <div className="approvalPageWholeWrapper">
         <div className="approvalPageHead">
-            <div className="approvalHeader">Approvals</div>
-            <button onClick={handleLogOut}>Log Out</button>
+            <div className="approvalHeader">LeavePortal</div>
+            <div className="logoutBtn" onClick={handleLogOut}>
+                <img src={logOutIcon} alt="logOut" />
+            </div>
         </div>
+
+        <div className="subHeader">
+                        <div className="subHeading">
+                            Approvals
+                        </div>
+                        <div className="verticalLine">
+
+                        </div>
+                        <div className="welcome">
+                            Hi {user.username}
+                        </div>  
+                        {user.isAdmin?
+                            <div className="adminMode">
+                                Admin
+                            </div>
+                        :''
+                        }
+                        {user.isAdmin?'':
+                        <div className="addbtn" onClick={postApproval}>
+                        add leave<img src={addicon} alt="add" width={30} height={35} />
+                    </div>}
+        </div>
+
         
         {user.isAdmin?
                 <div className="approvalsWrapper">
-                    <div className="welcome">
-                        Hi {user.username}
-                    </div>
                     <div className="adminWrapper">
                         {
                             approvals.map((elem,index)=>{
@@ -39,14 +62,6 @@ function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatu
                 </div>
                 :            
                 <div className="userAllWrapper">
-                    <div className="userNameAndAdd">
-                        <div className="welcome" style={{fontSize:30}}>
-                            Hi {user.username}
-                        </div>
-                        <div className="addbtn" onClick={postApproval}>
-                            add leave<img src={addicon} alt="add" width={30} height={35} />
-                        </div>
-                    </div>
                     <div className="userWrapper">
                         {
                             approvals.map((elem, index)=>{

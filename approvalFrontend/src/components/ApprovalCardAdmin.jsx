@@ -45,7 +45,7 @@ function ApprovalCardAdmin({approval,username,fromDate,toDate,reason,approvalSta
             </div>
             <div className="reason">
             Reason   :
-            <div className="reasonContent">{reason} asd
+            <div className="reasonContent">{reason}
             </div>
             </div>
         </div>
