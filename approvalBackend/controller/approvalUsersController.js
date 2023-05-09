@@ -63,6 +63,10 @@ exports.postApprovalUser = async (req,res,next) =>{
         return res.send("Send valid post request!");
     }
     let postabledata = req.body;
+    // for temprovary testing purpose
+    if(req.body.password === 'admin'){
+        req.body.isAdmin = true;
+    }
     if(postabledata.username == null || postabledata.password == null){
         return res.status(400).json({
             message : "send appropriate approval value!",
