@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function PostApproval({setApprovals, setIsPosting, approvals}) {
+function PostApproval({setApprovals, setIsPosting, approvals,user:currentUser}) {
     const fromDate = useRef();
     const toDate = useRef();
     const reason = useRef();

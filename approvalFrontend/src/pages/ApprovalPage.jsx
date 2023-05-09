@@ -28,7 +28,7 @@ function ApprovalPage({user, handleLogOut,approvals, setApprovals,approvalStatus
 
     return (
     <div className="approvalPageWholeWrapper">
-        {isPosting?<PostApproval setApprovals={setApprovals} approvals={approvals} setIsPosting={setIsPosting}/>:null}
+        {isPosting?<PostApproval setApprovals={setApprovals} approvals={approvals} setIsPosting={setIsPosting} user={user}/>:null}
         {/* NAVBAR */}
             <div className="backgroundImg">
                 <img src={backgroundImg} alt="" />
