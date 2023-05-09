@@ -9,6 +9,8 @@
       top: 12vh;
     }
 
+    /* main nav bar */
+
   .approvalPageHead{
     background-color: transparent;
     padding: 2vh;
@@ -29,7 +31,7 @@
   }
   .approvalPageHead .logoutBtn{
     margin-top: 1.3vh;
-    margin-right:6vw ;
+    margin-right:4vw ;
     border: none;
     width: 4vw;
     height: 8vh;
@@ -57,14 +59,17 @@
     box-shadow: 1px 2px 3px 1px #6948a4 ;
   }
 
+  /* subheading */
+
   .subHeader{
     display: flex;
     justify-content: flex-start;
     background-color: transparent;
-    padding: 1.5vw;
+    padding: 0.6vw;
     margin-left: 7.5vw;
     margin-right: 7vw;
   }
+  
 
   .subHeader:hover{
     cursor: default;
@@ -72,7 +77,7 @@
 
   .subHeading{
     color: #6948a4;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600 ;
   }
 
@@ -80,17 +85,30 @@
     margin-left: 1vw;
     margin-right: 1vw;
     width: 0.3vw;
-    height: 7vh;
-    background-color: #a0afed;
+    height: 6vh;
+    background-color: #001567;
   }
 
   .welcome{
     width: fit-content;
-    font-size:35px;
+    font-size:30px;
     font-weight: 500;
     color:#6948a4;
+    animation: slide-right 1s ease-in-out !important;
+    animation-delay: 5s;
   }
 
+  @keyframes slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
   .ntd{
     font-size:35px;
     margin-left: 30vw;
@@ -100,9 +118,9 @@
   }
 
   .adminMode{
-    margin-top: 1vh;
+    margin-top: 0.7vh;
     margin-left: 1vw;
-    width: 5vw;
+    width: 5.5vw;
     height: 5vh;
     border-radius: 15px;
     background-color: #83c9d6;
@@ -111,6 +129,7 @@
     align-items: center;
     font-size: 20px;
     font-weight: 600;
+    box-shadow: 0 2px 10px 0 rgba(2, 157, 168, 0.751);
   }
 
 
@@ -122,21 +141,81 @@
     align-items: center;
     justify-content: center;
     width:10vw;
-    height:8vh;
+    height:7vh;
     background-color:#9069d3;
     border-radius:15px;
   }
   
   .addbtn:hover{
-    background-color:#6948a4;
+    background-color:#9573d0;
     cursor: pointer;
+    box-shadow: 1px 8px 12px 1px rgba(157, 38, 236, 0.599);
   }
 
+  /* sort cards */
+  .sortBtn{
+    background-color: #6a48a442;
+    border-radius: 15px;
+    width: 20vw;
+    height: 6vh;
+    display: flex;
+    margin: 0.5vw;
+    margin-left: 40vw;
+    margin-bottom: 1vw;
+    font-size: 20px;
+    font-weight: 450;
+    /* color:#000722; */
+    color: #b7b7b7;
+  }
+
+  .pending , .history{
+    position: relative;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #83c9d6;
+    animation: none;
+  }
+
+  .pending{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  
+  .history{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .pending:hover , .history:hover{
+    cursor: pointer;
+    background-color: #9edae5 !important;
+    box-shadow: 1px 2px 12px 1px #9edae5c6;
+    color: #001567 !important;
+  }
+  
+
+  .verticalLineSort{
+    width: 1%;
+    /* margin-left: 1vw;
+    margin-right: 1vw; */
+    height: 100%;
+    background-color: #6a48a4b9;
+  }
+
+  .loading{
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+  }
+
+  /* approval cards */
   .approvalsWrapper{
     display: flex;
     flex-direction: column;
     padding: 4vh;
-    font-size: 22px;
+    font-size: 18px;
     justify-content: center;
     align-items: center;
   }
@@ -144,8 +223,8 @@
   .adminWrapper , .userWrapper{
     display: flex;
     flex-direction: column;
-    gap: 1vh;
-    width: 80vw;
+    gap: 1.3vh;
+    width: 75vw;
   }
 
   .userAllWrapper{

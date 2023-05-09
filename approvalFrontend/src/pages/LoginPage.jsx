@@ -8,7 +8,7 @@ export default function LoginPage({isLogin, handlers, refs}) {
             <img src={leavePortal} alt="leavePortal"  height={200} width={400}/>
             <Form refs={refs} title={isLogin?"login":"register"} handler={isLogin?handlers[0]:handlers[1]}/>
 
-            <a onClick={handlers[2]} style={{color:'#6948a4',cursor:'pointer',fontSize:'25px'}} >{isLogin? "New User?":"Already Registered?"}</a>
+            <a onClick={handlers[2]} style={{color:'#6948a4',cursor:'pointer',fontSize:'26px'}} >{isLogin? "New User?":"Already Registered?"}</a>
         </div>
     );
 }

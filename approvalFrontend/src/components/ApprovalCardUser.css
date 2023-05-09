@@ -1,16 +1,23 @@
-.UserCardWrapper{
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    transform: scale(1);
-    font-size: 20px;
-    transition: all 0.3s ease-in-out;
-}
+    .UserCardWrapper{
+        /* border-radius: 15px; */
+        display: flex;
+        align-items: center;
+    
+        font-size: 18px;
+        /* glassmorphism */
+        background: rgba(255, 255, 255, 0.542);
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;        
+    }
 
-.UserCardWrapper:hover{
-    transform: scale(1.01);
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
-}
+    .UserCardWrapper:hover{
+        transform: scale(1.01);
+        box-shadow: 0 8px 32px 0 rgba(145, 149, 206, 0.37);
+        z-index: 2;
+        cursor: default;
+        /* box-shadow: var(--box-shadow-card-white); */
+    }
 
 .UserLeft{
     color: #010e40;
@@ -65,7 +72,7 @@
     text-indent: 2vw;
     word-wrap: break-word;
     margin-left: 3vw;
-    font-size: 18px;
+    font-size: 16px;
     background-color: rgba(217, 217, 217, 0.567);
     border-radius: 10px;
 }
@@ -98,6 +105,7 @@
     width: 15vw ;
     margin-right: 5vw;
     background-color: transparent;
+    
 }
 
 .approvalStatus{
@@ -109,13 +117,14 @@
     color: #71cfdd  ;
     height: 75%;
     width: 45%;
+    box-shadow: var(--box-shadow-button);
     transition: all 0.3s ease-in-out;
 }
 
 .approvalStatus:hover{
     cursor: default;
     background-color: #001a82;
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
+    box-shadow: 0 2px 10px 0 rgba(0, 13, 96, 0.751);
 }
 
 .deleteApproval  {
@@ -123,15 +132,16 @@
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    background-color: #a0d9e1;
+    background-color: #5bd0df;
     height: 75%;
     width: 40%;
+    box-shadow: var(--box-shadow-button);
     transition: all 0.3s ease-in-out;
 }
 
 .deleteApproval:hover{
     cursor: pointer;
-    background-color: #71cfdd;
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
+    background-color: #00cae9;
+    box-shadow: 0 8px 20px 0 rgba(1, 118, 136, 0.751);
 }
 

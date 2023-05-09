@@ -10,8 +10,8 @@ let port = process.env.PORT || 3000;
 
 // connect with mongoDB
 // let mongoDBString = 'mongodb://0.0.0.0:27017/approval';
-let mongoDBString = `mongodb+srv://${config.get('DBNAME')}:${config.get('DBPASSWORD')}@cluster0.gp8dend.mongodb.net/LeavePortal?retryWrites=true&w=majority`;
-
+// let mongoDBString = `mongodb+srv://${config.get('DBNAME')}:${config.get('DBPASSWORD')}@cluster0.gp8dend.mongodb.net/LeavePortal?retryWrites=true&w=majority`;
+let mongoDBString = `mongodb://${config.get('DBNAME')}:${config.get('DBPASSWORD')}@ac-m8tkuze-shard-00-00.gp8dend.mongodb.net:27017,ac-m8tkuze-shard-00-01.gp8dend.mongodb.net:27017,ac-m8tkuze-shard-00-02.gp8dend.mongodb.net:27017/LeavePortal?ssl=true&replicaSet=atlas-di4rey-shard-0&authSource=admin&retryWrites=true&w=majority`;
 mongoose.connect(mongoDBString,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{console.log("Connected to mongoDB!");})
 .catch((err)=>{console.log("Cannot connect to mongoDB!"+err);});

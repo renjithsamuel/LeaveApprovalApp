@@ -1,15 +1,25 @@
 .AdminCardWrapper{
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    transform: scale(1);
-    transition: all 0.3s ease-in-out;
+        /* border-radius: 15px; */
+        display: flex;
+        align-items: center;
+    
+        font-size: 18px;
+        /* glassmorphism */
+        /* background: #ffffff8a; pending*/ 
+        /* background: #33b7b7c0; accepted*/
+        /* background: #ac9bcbb9; rejected*/
+        /* background: #e6e2e197; else*/
+        /* background: #ffffff8a; */
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
     /* width: 80vw; */
 }
 
 .AdminCardWrapper:hover{
     transform: scale(1.01);
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
+    box-shadow: 0 8px 32px 0 rgba(145, 149, 206, 0.37);
+    z-index: 2;
+    cursor: default;
 }
 
 .adminleft{
@@ -17,9 +27,8 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    padding: 3vh;
+    padding: 2.3vh;
     gap: 1vh;
-
     width: 80%;
 }
 
@@ -95,12 +104,13 @@
     height: 75%;
     width: 36%;
     transition: all 0.3s ease-in-out;
+    box-shadow: var(--box-shadow-button);
 }
 
 .AdminapprovalStatus:hover{
     cursor: default;
     background-color: #001a82;
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
+    box-shadow: 0 8px 20px 0 rgba(0, 13, 96, 0.751);
 }
 
 .rejectBtn{
@@ -112,12 +122,13 @@
     height: 75%;
     width: 30%;
     transition: all 0.3s ease-in-out;
+    box-shadow: var(--box-shadow-button);
 }
 
 .rejectBtn:hover{
     cursor: pointer;
-    background-color: #6948a4;
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
+    /* background-color: #6948a4; */
+    box-shadow: 0 8px 20px 0 rgba(101, 7, 124, 0.751);
 }
 
 .acceptBtn  {
@@ -128,11 +139,12 @@
     background-color: #5bd0df;
     height: 75%;
     width: 30%;
+    box-shadow: var(--box-shadow-button);
     transition: all 0.3s ease-in-out;
 }
 
 .acceptBtn:hover{
     cursor: pointer;
     background-color: #00cae9;
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
+    box-shadow: 0 8px 20px 0 rgba(1, 118, 136, 0.751);
 }

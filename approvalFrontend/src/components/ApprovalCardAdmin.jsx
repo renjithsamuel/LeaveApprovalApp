@@ -22,13 +22,10 @@ function ApprovalCardAdmin({approval,username,fromDate,toDate,reason,approvalSta
         }));
     },[newToDate,newFromDate]);
 
-    // useEffect(()=>{
-    //     console.log('Rerender the component');
-    //     approval = approvalStatus;
-    // },[approvalStatus[0],approval])
     
+    // style={{backgroundColor:(approval=='pending')?'#ffffff8a':(approval=='accepted')?'#33b7b7c0':(approval=='rejected')?'#ac9bcbb9':'#e6e2e197'}}
     return ( 
-    <div className="AdminCardWrapper" style={{backgroundColor:(approval=='pending')?'#aaafbf':(approval=='accepted')?'#97dee8':(approval=='rejected')?'#b196e3':'#e6e2e1'}}>
+    <div className="AdminCardWrapper"  style={{backgroundColor:(approval=='pending')?'#ffffff8a':(approval=='accepted')?'#33b7b7c0':(approval=='rejected')?'#ac9bcbb9':'#e6e2e197'}} >
         <div className="adminleft">
             <div className="username">
                 Name : {username}

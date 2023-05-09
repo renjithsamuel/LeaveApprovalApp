@@ -1,3 +1,21 @@
+:root{
+  --box-shadow-card:   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                          0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                          0 5px 5px rgba(0, 0, 0, 0.06),
+                          0 3px 3px rgba(0, 0, 0, 0.072),
+                          0 5px 5.4px rgba(0, 0, 0, 0.086),
+                          0 5px 5px rgba(0, 0, 0, 0.12);
+  --box-shadow-card-white:   0 2.8px 2.2px rgba(255, 255, 255, 0.1),
+                          0 6.7px 5.3px rgba(255, 255, 255, 0.1),
+                          0 5px 5px rgb(255, 255,255,0.1),
+                          0 3px 3px rgb(255, 255,255,0.1),
+                          0 5px 5.4px rgb(255, 255,255,0.1),
+                          0 5px 5px rgb(255, 255,255,0.1);
+  --box-shadow-button: 1px 2px 3px 1px rgba(60, 60, 60, 0.581);
+  --box-shadow-glow : 0 8px 20px 0 rgba(35, 209, 235, 0.751);
+                        }
+
+
 *{
     scroll-behavior: smooth;
     transition: all 0.3s ease;
@@ -33,46 +51,48 @@ body{
     flex-direction: column;
     gap:3vh;
     margin-top: 0vh;
-    background-color:#71cfdd ;
+    background-color:#71cfddeb ;
     border-radius: 15px;
-    font-size: 36px;
+    font-size: 30px;
+    box-shadow: 2px 4px 12px 2px rgba(26, 221, 243, 0.415);
 }
 
 .form input{
     all: unset;
-    font-size: 30px;
+    font-size: 25px;
     width: 20vw;
     height: 7vh;
-    text-indent: 2vw;
+    text-indent: 1.5vw;
     border-radius: 15px;
-    background-color: #e1e1e1;
+    background-color: #e4ebebc5 !important;
     box-shadow: 1px 2px 1px 0px gray;
     transition: all 0.3s ease-in-out;
 }
 
 .form input:hover,.form input:focus{
-    box-shadow: 1px 2px 3px 1px rgb(93, 93, 93);
+    background-color:#e4ebebc5 !important ;
+    box-shadow: 1px 2px 3px 1px rgba(60, 60, 60, 0.581);
 }
 
 .form button{
     border: none;
-    background-color: #e1e1e1;
-    font-size: 24px;
-    width: 6vw;
-    height: 5vh;
+    background-color: #e4ebebc5 !important;
+    font-size: 22px;
+    width: 6.5vw;
+    height: 5.5vh;
     border-radius:15px ;
+    transform: scale(1);
+    box-shadow: 1px 1px 1px 1px #7d7d7dc5;
     transition: all 0.3s ease-in-out;
-    box-shadow: 1px 1px 1px 1px rgb(93, 93, 93);
 
 }
 
 .form button:hover{
     cursor: pointer;
-    background-color: rgb(204, 204, 204);
-    box-shadow: 1px 2px 3px 1px rgb(93, 93, 93);
+    background-color: rgba(220, 220, 220, 0.874);
+    box-shadow:  1px 2px 3px 2px rgba(60, 60, 60, 0.581);
 
 }
-
 
 ::-webkit-scrollbar {
   /* display: none; */

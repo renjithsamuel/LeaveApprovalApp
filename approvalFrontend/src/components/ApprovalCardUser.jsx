@@ -22,8 +22,8 @@ function ApprovalCardUser({approval,fromDate,toDate,reason,approvalStatus,userId
         }));
     },[newToDate,newFromDate]);
     return ( 
-
-        <div className="UserCardWrapper"  style={{backgroundColor:(approval=='pending')?'#aaafbf':(approval=='accepted')?'#97dee8':(approval=='rejected')?'#b196e3':'#e6e2e1'}}>
+        // style={{backgroundColor:(approval=='pending')?'#aaafbf':(approval=='accepted')?'#97dee8':(approval=='rejected')?'#b196e3':'#e6e2e1'}}
+        <div className="UserCardWrapper"  style={{backgroundColor:(approval=='pending')?'#ffffff8a':(approval=='accepted')?'#33b7b7c0':(approval=='rejected')?'#ac9bcbb9':'#e6e2e197'}}>
         <div className="UserLeft">
             <div className="UserDates">
                 <div className="UserFromDate">

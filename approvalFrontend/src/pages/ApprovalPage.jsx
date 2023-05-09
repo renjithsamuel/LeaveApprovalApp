@@ -5,21 +5,44 @@ import './ApprovalPage.css';
 import addicon from '../assets/add-icon.svg'
 import logOutIcon from '../assets/logout-icon.svg'
 import backgroundImg from '../assets/background.svg'
+import { useMemo } from "react";
+import ReactLoading from 'react-loading';
 
-function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatus,deleteApproval}) {
+function ApprovalPage({user, handleLogOut,approvals, postApproval,approvalStatus,deleteApproval}) {
+    const [currentDisplay,setCurrentDisplay] = useState('pending');
+    const [approvalsSet, setApprovalsSet] = useState([]); 
+    const [isLoading, setIsLoading] = useState(true)
+    useMemo(() => {
+        setIsLoading(true);
 
-    return ( <div className="approvalPageWholeWrapper">
+        if(currentDisplay=='pending')
+            setApprovalsSet(approvals.filter((elem)=>(elem.approval==='pending')));
+        else
+            setApprovalsSet(approvals.filter((elem)=>(elem.approval!=='pending')))
+
+
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 3000);
+    }, [approvals, currentDisplay])
+
+    return (
+    <div className="approvalPageWholeWrapper">
+
+
+        {/* NAVBAR */}
             <div className="backgroundImg">
-            <img src={backgroundImg} alt="" />
+                <img src={backgroundImg} alt="" />
             </div>
-        <div className="approvalPageHead">
-            <div className="approvalHeader">LeavePortal</div>
-            <div className="logoutBtn" onClick={handleLogOut}>
-                <img src={logOutIcon} alt="logOut" />
+            <div className="approvalPageHead">
+                <div className="approvalHeader">LeavePortal</div>
+                <div className="logoutBtn" onClick={handleLogOut}>
+                    <img src={logOutIcon} alt="logOut" />
+                </div>
             </div>
-        </div>
 
-        <div className="subHeader">
+        {/* SUBHEADER */}
+          <div className="subHeader">
                         <div className="subHeading">
                             Approvals
                         </div>
@@ -40,13 +63,31 @@ function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatu
                         add leave<img src={addicon} alt="add" width={30} height={35} />
                     </div>}
         </div>
-
         
-        {user.isAdmin?
+        {/* SORT BY */}
+        
+        <div className="sortBtn">
+                <div className="pending" onClick={(e)=>{setCurrentDisplay('pending');}} style={{backgroundColor:(currentDisplay=='pending')?'#83c9d6':'transparent',color:(currentDisplay=='pending')?'#000722':'white'}}>
+                        pending
+                </div>
+                <div className="verticalLineSort">
+
+                </div>
+                <div className="history" onClick={(e)=>{setCurrentDisplay('history');}} style={{backgroundColor:(currentDisplay=='pending')?'transparent':'#83c9d6' , color:(currentDisplay=='pending')?'white':'#000722' }}>
+                        history
+                </div>
+        </div>
+
+        {
+        isLoading?<div className="loading">
+            <ReactLoading type="bubbles" color="#6948a4" height={150} width={150} />
+        </div>:
+        user.isAdmin?
+                // cards for admin
                 <div className="approvalsWrapper">
                     <div className="adminWrapper">
-                        {approvals.length==0?<div className="ntd">Nothing to display</div>:
-                            approvals.map((elem,index)=>{
+                        {!approvalsSet.length?<div className="ntd">Nothing to display</div>:
+                            approvalsSet.map((elem,index)=>{
                                return <ApprovalCardAdmin
                                key={index}
                                 approval = {elem.approval}
@@ -62,11 +103,12 @@ function ApprovalPage({user, handleLogOut, approvals, postApproval,approvalStatu
                         }
                     </div>
                 </div>
-                :            
+                :   
+                // cards for user 
                 <div className="userAllWrapper">
                     <div className="userWrapper">
-                        {approvals.length==0?<div className="ntd">Nothing to display</div>:
-                            approvals.map((elem, index)=>{
+                        {!approvalsSet.length?<div className="ntd">Nothing to display</div>:
+                            approvalsSet.map((elem, index)=>{
                                return <ApprovalCardUser
                                 key={index}
                                 approval = {elem.approval}
