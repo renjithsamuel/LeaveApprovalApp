@@ -250,7 +250,8 @@
   }
   
   #dialog-content {
-    font-size: 20px;
+    
+    font-size: 18px;
     font-weight: 400;
     position: absolute;
     top: 50vh;
@@ -262,6 +263,7 @@
     height: 60vh;
     border-radius: 15px;
     animation: none    ;
+
   }
   
   #dialog-content h2 {
@@ -272,14 +274,14 @@
   #dialog-content label {
     font-weight: 400;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5vw;
     margin-left: 0.5vw;
   }
   
   #dialog-content input,
   #dialog-content textarea {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 17px;
     border: none;
     box-shadow: 1px 1px 1px 1px gray;
     margin-left: 2vw;
@@ -289,6 +291,13 @@
     margin-bottom: 10px;
     border-radius: 10px;
     text-indent: 10px;
+    background-color: #efefefa9;
+  }
+
+  #dialog-content input:hover,
+  #dialog-content textarea:hover {
+    box-shadow: 1px 2px 13px 2px rgba(60, 60, 60, 0.767);
+    cursor: text;
   }
   
   #dialog-content textarea {
@@ -303,18 +312,20 @@
   }
   
   #dialog-content button {
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 300;
+    font-size: 15px;
     background-color: #d4d4d4;
     margin-left: 6vw;
     margin-top: 10px;
-    padding: 2vh;
+    padding: 10px;
     border-radius: 15px;
     border: none;
+    box-shadow: 1px 2px 3px 1px rgba(60, 60, 60, 0.581);;
   }
   
   #dialog-content button:hover {
     cursor: pointer;
-    background-color: #b7b7b7;
-    box-shadow:1px 0px 1px 1px rgb(76, 76, 76); ;
+    background-color: #c6c6c6;
+    box-shadow: 1px 2px 13px 2px rgba(60, 60, 60, 0.767);;
+
   }

@@ -19,11 +19,9 @@ function ApprovalPage({user, handleLogOut,approvals, postApproval,approvalStatus
             setApprovalsSet(approvals.filter((elem)=>(elem.approval==='pending')));
         else
             setApprovalsSet(approvals.filter((elem)=>(elem.approval!=='pending')))
-
-
-        setTimeout(() => {
+        // setT imeout(() => {
             setIsLoading(false);
-        }, 3000);
+        // }, 3000);
     }, [approvals, currentDisplay])
 
     return (
