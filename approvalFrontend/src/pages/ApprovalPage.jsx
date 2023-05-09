@@ -7,11 +7,13 @@ import logOutIcon from '../assets/logout-icon.svg'
 import backgroundImg from '../assets/background.svg'
 import { useMemo } from "react";
 import ReactLoading from 'react-loading';
+import PostApproval from "../components/PostApproval";
 
-function ApprovalPage({user, handleLogOut,approvals, postApproval,approvalStatus,deleteApproval}) {
+function ApprovalPage({user, handleLogOut,approvals, setApprovals,approvalStatus,deleteApproval}) {
     const [currentDisplay,setCurrentDisplay] = useState('pending');
     const [approvalsSet, setApprovalsSet] = useState([]); 
     const [isLoading, setIsLoading] = useState(true)
+    const [isPosting, setIsPosting] = useState(false);
     useMemo(() => {
         setIsLoading(true);
 
@@ -26,8 +28,7 @@ function ApprovalPage({user, handleLogOut,approvals, postApproval,approvalStatus
 
     return (
     <div className="approvalPageWholeWrapper">
-
-
+        {isPosting?<PostApproval setApprovals={setApprovals} approvals={approvals} setIsPosting={setIsPosting}/>:null}
         {/* NAVBAR */}
             <div className="backgroundImg">
                 <img src={backgroundImg} alt="" />
@@ -57,7 +58,9 @@ function ApprovalPage({user, handleLogOut,approvals, postApproval,approvalStatus
                         :''
                         }
                         {user.isAdmin?'':
-                        <div className="addbtn" onClick={postApproval}>
+                        <div className="addbtn" onClick={() => {
+                            setIsPosting(true)
+                        }}>
                         add leave<img src={addicon} alt="add" width={30} height={35} />
                     </div>}
         </div>
@@ -126,5 +129,7 @@ function ApprovalPage({user, handleLogOut,approvals, postApproval,approvalStatus
 
     </div> );
 }
+
+
 
 export default ApprovalPage;
