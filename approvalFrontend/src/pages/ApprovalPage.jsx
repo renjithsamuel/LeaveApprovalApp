@@ -9,7 +9,7 @@ import { useMemo } from "react";
 import ReactLoading from 'react-loading';
 import PostApproval from "../components/PostApproval";
 
-function ApprovalPage({user, handleLogOut,approvals, setApprovals,approvalStatus,deleteApproval}) {
+function ApprovalPage({user, handleLogOut,approvals, setApprovals,approvalStatus,deleteApproval,sendHTTPRequest}) {
     const [currentDisplay,setCurrentDisplay] = useState('pending');
     const [approvalsSet, setApprovalsSet] = useState([]); 
     const [isLoading, setIsLoading] = useState(true)
@@ -28,7 +28,7 @@ function ApprovalPage({user, handleLogOut,approvals, setApprovals,approvalStatus
 
     return (
     <div className="approvalPageWholeWrapper">
-        {isPosting?<PostApproval setApprovals={setApprovals} approvals={approvals} setIsPosting={setIsPosting} user={user}/>:null}
+        {isPosting?<PostApproval setApprovals={setApprovals} approvals={approvals} setIsPosting={setIsPosting} user={user} sendHTTPRequest={sendHTTPRequest}/>:null}
         {/* NAVBAR */}
             <div className="backgroundImg">
                 <img src={backgroundImg} alt="" />

@@ -7,14 +7,12 @@
         /* glassmorphism */
         background: rgba(255, 255, 255, 0.542);
         border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-        z-index: 1;        
+        transition: all 0.3s ease-in-out;    
     }
 
     .UserCardWrapper:hover{
         transform: scale(1.01);
         box-shadow: 0 8px 32px 0 rgba(145, 149, 206, 0.37);
-        z-index: 2;
         cursor: default;
         /* box-shadow: var(--box-shadow-card-white); */
     }

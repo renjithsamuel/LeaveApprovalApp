@@ -172,7 +172,7 @@ function App() {
         ((JSON.stringify(currentUser) !== "{}") && (sessionStorage.getItem('token')))
           ?<ApprovalPage user={currentUser} handleLogOut={handleLogOut}  approvals={approvals}
           setApprovals={setApprovals} approvalStatus={handleApprovalStatus} 
-          deleteApproval={deleteCurrentApproval}/> 
+          deleteApproval={deleteCurrentApproval} sendHTTPRequest={sendHTTPRequest}/> 
             
           :<>
           <LoginPage isLogin={isLogin} handlers={[handleLogin, handleRegsiter, toggleForms]} refs={[username, password]}/>   
