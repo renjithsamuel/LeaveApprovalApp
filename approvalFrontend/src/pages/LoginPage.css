@@ -259,13 +259,13 @@ html,body{
 
 @media only screen and (max-width: 620px) {
   .form{
-    width: 60vw;
+    width: 75vw;
   }
 
 
   .form input {
     font-size: 18px;
-    width: 45vw;
+    width: 60vw;
   }
 
   .form button{
@@ -285,6 +285,17 @@ html,body{
 
 @media only screen and (max-width: 420px) {
 
+  .form{
+    width: 80vw;
+  }
+
+
+  
+  .form input {
+    font-size: 18px;
+    width: 65vw;
+  }
+
   .invalidText{
     margin-left: 25vw;
   }
@@ -297,7 +308,7 @@ html,body{
     width: 25vw;
   }
   .formWrapper a{
-    font-size: 20px;
+    font-size: 22px;
  }
 }
 

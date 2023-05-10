@@ -417,6 +417,7 @@
     }
 
     .addbtn{
+      height: 6vh;
       width: 18vw;
       position: absolute;
       right: 12vw;
@@ -500,11 +501,8 @@
     }
 
     .addbtn{
-      /* font-size: 13px;
-      height: 6.5vh;
-      top: 28vh;
-      right:33vw;
-      width: 35vw; */
+      height: 6vh;
+      top: 23vh;
       width: 23vw;
     }
 
@@ -565,8 +563,8 @@
     }
 
     .addbtn{
-      height: 6.5vh;
-      top: 20.5vh;
+      height: 6.3vh;
+      top: 19vh;
       width: 25vw;
     }
 

@@ -265,6 +265,31 @@
     }
   }
 
+    
+  @media only screen and (max-width: 390px) {
+
+    .UserLeft{
+        width: 60%;
+    }
+
+    .UserRight{
+        margin-right: 2vw;
+        width:40%;
+    }
+
+
+    .approvalStatus{
+        font-size: 10px;
+        width: 50%;
+        height: 60%;
+        margin-right: 0.8vw;
+    }    
+    .deleteApproval {
+        height: 60%;
+        width: 50%;
+    }
+  }
+
 
   @media only screen and (max-width: 376px) {
 
@@ -303,31 +328,28 @@
   }
 
 
+
+
   
-  @media only screen and (max-width: 390px) {
+  @media only screen and (max-width: 360px) {
+        .UserLeft{  
+            width: 60%;
+        }
 
-    .UserLeft{
-        width: 60%;
-    }
+        .UserReasonContent{
+            width: 40vw;
+        }
 
-    .UserRight{
-        margin-right: 2vw;
-        width:40%;
-    }
+        .approvalStatus{
+            width: 55%;
+            height: 58%;
+        }    
+        .deleteApproval {
+            height: 58%;
+            width: 50%;
+        }
 
-
-    .approvalStatus{
-        font-size: 10px;
-        width: 50%;
-        height: 60%;
-        margin-right: 0.8vw;
-    }    
-    .deleteApproval {
-        height: 60%;
-        width: 50%;
-    }
   }
-
   
   @media only screen and (max-width: 320px) {
 
