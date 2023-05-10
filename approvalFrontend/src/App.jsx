@@ -170,13 +170,14 @@ function App() {
     <>
       {
         ((JSON.stringify(currentUser) !== "{}") && (sessionStorage.getItem('token')))
-          ?<ApprovalPage user={currentUser} handleLogOut={handleLogOut}  approvals={approvals}
+          ?
+          <ApprovalPage user={currentUser} handleLogOut={handleLogOut}  approvals={approvals}
           setApprovals={setApprovals} approvalStatus={handleApprovalStatus} 
           deleteApproval={deleteCurrentApproval} sendHTTPRequest={sendHTTPRequest}/> 
             
           :<>
           <LoginPage isLogin={isLogin} handlers={[handleLogin, handleRegsiter, toggleForms]} refs={[username, password]}/>   
-          {inValidText?<p style={{marginLeft:'44vw',color:'#6948a4',cursor:'pointer',fontSize:'25px'}}>{inValidText}</p>:null}
+          {inValidText?<p className="invalidText" >{inValidText}</p>:null}
         </>
           
         }

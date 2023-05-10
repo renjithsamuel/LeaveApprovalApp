@@ -62,9 +62,6 @@
     display: flex;
 }
 
-.toDateContent{
-    /* margin-left: 1vw; */
-}
 
 .reason{
     margin-left: 1vw;
@@ -147,3 +144,176 @@
     background-color: #00cae9;
     box-shadow: 0 8px 20px 0 rgba(1, 118, 136, 0.751);
 }
+
+/* responsive website */
+
+@media only screen and (min-width: 2000px) {
+ 
+
+  }
+
+
+  
+  @media only screen and (max-width: 1200px) {
+
+    /* .AdminapprovalStatus{
+        width: 40%;
+    } */
+
+  }
+
+  @media only screen and (max-width: 920px) {
+    .adminleft{
+        width: 60%;
+    }
+
+    .adminRight{
+        width: 40%;
+    }
+
+    .AdminapprovalStatus{
+        font-size: 15px;
+        width: 32%;
+    }
+    .rejectBtn {
+        width: 29%;
+    }
+    .acceptBtn {
+        width: 29%;
+    }
+    .reasonContent{
+        width: 38vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 720px) {
+    /* change here */
+    .reasonContent{
+        width: 36vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 620px) {
+
+    /* change here */
+    .AdminCardWrapper{
+        font-size: 16px;   
+    }
+    .reasonContent{
+        font-size: 15px;
+        width: 35vw;
+    }
+    .AdminapprovalStatus{
+        font-size: 14px;
+        width: 34%;
+        margin-right: 0.5vw;
+    }    
+  }
+
+
+  @media only screen and (max-width: 520px) {
+
+    /* change here */
+    
+    .adminleft{  
+        width: 50%;
+    }
+    .AdminCardWrapper{
+        /* height: 24vh; */
+        font-size: 14px;   
+    }
+    .reasonContent{
+        font-size: 13px;
+        width: 35vw;
+    }
+
+    .AdminapprovalStatus{
+        font-size: 12px;
+        height: 70%;
+        /* transform: scale(0.9);   */
+    }    
+    .rejectBtn , .acceptBtn{
+        width: 30%;
+       height: 70%;
+    }
+    .rejectBtn img,.acceptBtn img{
+        transform: scale(0.9);
+    }
+
+
+  }
+
+
+  
+  @media only screen and (max-width: 450px) {
+
+    /* change here */
+    .AdminCardWrapper{
+        /* height: 24vh; */
+        /* width: 90vw; */
+        font-size: 13px;   
+    }
+    
+    .reasonContent{
+        font-size: 12px;
+        width: 35vw;
+    }
+
+    .AdminapprovalStatus{
+        font-size: 11px;
+        height: 60%;
+    }   
+
+    .rejectBtn , .acceptBtn{
+        width: 30%;
+       height: 60%;
+    }
+    .rejectBtn img,.acceptBtn img{
+        transform: scale(0.7);
+    } 
+  }
+
+
+  @media only screen and (max-width: 320px) {
+
+    .adminleft{
+        width: 80%;
+        /* padding: 2vw; */
+    }
+
+    .reasonContent{
+        width: 80%;
+    }
+
+    .AdminCardWrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .adminRight{
+        width: 80%;
+        align-items: start;
+        margin: 0;
+        margin-top: 1vh;
+        height: 13vh;
+        /* margin-bottom: 1vh; */
+    }
+
+
+    .AdminapprovalStatus{
+        font-size: 11px;
+        height: 75%;
+    }   
+
+    .rejectBtn , .acceptBtn{
+        margin-top: 0vh;
+        width: 30%;
+       height: 75%;
+    }
+    .rejectBtn img,.acceptBtn img{
+        transform: scale(0.7);
+    } 
+
+  }

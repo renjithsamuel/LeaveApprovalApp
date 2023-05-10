@@ -5,8 +5,8 @@
     .backgroundImg{ 
       z-index: -10;
       position: absolute;
-      left: 75vw;
-      top: 12vh;
+      right:0vw;
+      top: 22vh;
     }
 
     /* main nav bar */
@@ -46,7 +46,6 @@
   }
 
   .logoutBtn img{
-    height: 50px;
     width: 50px;
     border-radius:15px ;
     transform: scale(1);
@@ -153,14 +152,20 @@
   }
 
   /* sort cards */
+  .sortBtnWrapper{
+    display: flex;
+    justify-content: center;
+
+  }
+
   .sortBtn{
     background-color: #6a48a442;
     border-radius: 15px;
     width: 20vw;
     height: 6vh;
     display: flex;
+    justify-content: center;
     margin: 0.5vw;
-    margin-left: 40vw;
     margin-bottom: 2vw;
     font-size: 20px;
     font-weight: 450;
@@ -170,7 +175,7 @@
 
   .pending , .history{
     position: relative;
-    width: 10vw;
+    width: 49%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -329,3 +334,275 @@
     box-shadow: 1px 2px 13px 2px rgba(60, 60, 60, 0.767);;
 
   }
+
+  
+  @media only screen and (min-width: 2000px) {
+
+    .sortBtn{
+      height: 7vh;
+      margin-bottom: 0.4vh;
+    }
+
+    .adminMode{
+      margin-top: 0.3vw;
+      width: 7vw;
+    }
+
+    .addbtn{
+      height: 8vh;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 1200px) {
+
+    .approvalHeader{
+      font-size: 35px;
+    }
+
+    .approvalPageHead .logoutBtn{
+      margin-top: 0.5vh;
+      height: 6vh;
+      /* width: 3vw; */
+    }
+
+    .addbtn{
+      width: 14vw;
+    }
+    
+
+
+    .sortBtn{
+      margin-bottom: 0.5vh;
+      margin-top: 1.5vh;
+      
+    }
+
+    .adminMode{
+      margin-top: 0.7vw;
+      width: 7vw;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 920px) {
+
+
+    /* changes here */
+
+    .sortBtnWrapper{
+      margin-left: 12vw;
+      justify-content: flex-start;
+    }
+
+    .subHeader{
+      display: flex;
+      margin-left: 12vw;
+      /* justify-content: center; */
+    }
+
+    .adminMode{
+      margin-top: 0.7vw;
+      width: 9vw;
+    }
+
+    .sortBtn{
+      width: 25vw;
+      margin-bottom: 0.5vh;
+      margin-top: 1.5vh;
+    }
+
+    .addbtn{
+      width: 18vw;
+      position: absolute;
+      right: 12vw;
+      top: 23.8vh;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 720px) {
+
+    .approvalHeader{
+      font-size: 35px;
+    }
+
+    .approvalPageHead .logoutBtn{
+      margin-top: 0.5vh;
+      height: 6vh;
+      /* width: 3vw; */
+    }
+
+
+    .subHeader{
+      display: flex;
+      justify-content: center;
+    }
+
+    /* changes here */
+
+    .adminMode{
+      width: 11vw;
+    }
+
+    .sortBtn{
+      width: 30vw;
+      margin-bottom: 0.5vh;
+      margin-top: 1.5vh;
+    }
+    
+    .adminWrapper,.userWrapper,.userAllWrapper{
+      width: 82vw;
+    }
+
+  }
+
+
+  
+  @media only screen and (max-width: 620px) {
+
+    .backgroundImg img{
+      opacity: 0.3;
+     }
+
+    .adminMode{
+      display: none;
+    }
+
+
+    .sortBtn{
+      /* margin-bottom: 12vh; */
+      font-size: 15px;
+      width: 30vw;
+    }
+
+    .addbtn{
+      /* font-size: 13px;
+      height: 6.5vh;
+      top: 28vh;
+      right:33vw;
+      width: 35vw; */
+      width: 23vw;
+    }
+
+    
+    .adminWrapper,.userWrapper,.userAllWrapper{
+      width: 83vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 520px) {
+
+
+    /* changes here */
+    .loading{
+      left: 37vw;
+    }
+
+    .approvalPageHead {
+      padding: 1vh;
+    }
+
+    .approvalHeader{
+      font-size: 29px;
+    }
+    
+    .approvalPageHead .logoutBtn{
+      margin-top: 0vh;
+      height: 3vh;
+      width: 5vw;
+    }
+
+    .logoutBtn img{
+      width: 40px;
+    }
+
+    .subHeading,.welcome{
+      font-size: 20px;
+    }
+    .adminMode{
+      font-size: 15px;
+      margin-top: 0vh;
+      width: 15vw;
+    }
+
+    .sortBtn{
+      font-size: 15px;
+      width: 35vw;
+      margin-bottom: 0.5vh;
+      margin-top: 1.5vh;
+    }
+
+    .addbtn{
+      height: 6.5vh;
+      top: 20.5vh;
+      width: 25vw;
+    }
+
+    .verticalLineSort{
+      width: 2%;
+
+      }
+
+
+      .adminWrapper,.userWrapper,.userAllWrapper{
+        width: 87vw;
+      }
+
+    
+  }
+
+
+
+
+    @media only screen and (max-width: 450px) {
+
+      .adminMode{
+        display: none;
+      }
+
+      .postbtnspt{
+        margin-bottom: 12vh;
+      }
+
+      .sortBtnWrapper{
+          position: absolute;
+          top: 18vh;
+          right:27.5vw;
+          justify-content: center;
+          margin-left: 0;
+      }
+      .sortBtn{
+        margin-bottom: 0vh;
+        width: 40vw;
+      }
+
+      .pending , .history{
+        font-size: 13px;
+      }
+
+      .addbtnspt{
+        margin-bottom: 20vh;
+      }
+      .addbtn{
+        
+        font-size: 13px;
+        height: 6.5vh;
+        top: 28vh;
+        right:30vw;
+        width: 35vw;
+      }
+
+      .loading{
+        left: 27vw;
+      }
+
+      .adminWrapper,.userWrapper,.userAllWrapper{
+        width: 87vw;
+      }
+
+    }

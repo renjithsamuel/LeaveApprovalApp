@@ -5,10 +5,10 @@ export default function LoginPage({isLogin, handlers, refs}) {
     return (
 
         <div className='formWrapper' style={{display: "flex", justifyItems: 'center', alignItems: 'center', flexDirection: 'column', gap: 15}}>
-            <img src={leavePortal} alt="leavePortal"  height={200} width={400}/>
+            <div className="leaveportalImg"><img src={leavePortal} alt="leavePortal" /></div>
             <Form refs={refs} title={isLogin?"Login":"Register"} handler={isLogin?handlers[0]:handlers[1]}/>
 
-            <a onClick={handlers[2]} style={{color:'#6948a4',cursor:'pointer',fontSize:'26px'}} >{isLogin? "New User?":"Already Registered?"}</a>
+            <a onClick={handlers[2]}  >{isLogin? "New User?":"Already Registered?"}</a>
         </div>
     );
 }

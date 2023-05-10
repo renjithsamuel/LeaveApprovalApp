@@ -2,7 +2,6 @@
         /* border-radius: 15px; */
         display: flex;
         align-items: center;
-    
         font-size: 18px;
         /* glassmorphism */
         background: rgba(255, 255, 255, 0.542);
@@ -35,10 +34,6 @@
 
 .UserFromDate{
     display: flex;
-}
-
-.UserFromDateContent{
-    /* margin-left: 1vw; */
 }
 
 
@@ -74,24 +69,6 @@
     background-color: rgba(217, 217, 217, 0.567);
     border-radius: 10px;
 }
-
-/* .UserRight{
-    height: 15vh;
-    width: 15vw ;
-    margin-right: 5vw;
-    background-color: #01135b;
-    border-radius: 15px;
-    transition: all 0.3s ease-in-out;
-    color: #71cfdd  ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.UserRight:hover{
-    background-color: #001a82;
-    box-shadow: 1px 2px 3px 1px rgb(187, 187, 187);
-} */
 
 
 /*  */
@@ -143,3 +120,147 @@
     box-shadow: 0 8px 20px 0 rgba(1, 118, 136, 0.751);
 }
 
+
+@media only screen and (min-width: 2000px) {
+    .UserCardWrapper{
+        margin-top: 3vh;
+    }
+
+  }
+
+    
+  @media only screen and (max-width: 1200px) {
+
+    .approvalStatus{
+        width: 53%;
+    }
+
+  }
+
+  @media only screen and (max-width: 920px) {
+    .UserLeft{
+        width: 65%;
+    }
+
+    .UserRight{
+        width: 35%;
+    }
+
+    .approvalStatus{
+        font-size: 16px;
+        width: 50%;
+    }
+    .deleteApproval {
+        width: 45%;
+    }
+    .UserReasonContent{
+        width: 42vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 720px) {
+    .UserLeft{
+        width: 65%;
+    }
+
+    .UserRight{
+        width: 35%;
+    }
+
+    .approvalStatus{
+        font-size: 16px;
+        width: 50%;
+    }
+    .deleteApproval {
+        width: 45%;
+    }
+
+    /* change here */
+    .UserReasonContent{
+        width: 38vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 620px) {
+
+    /* change here */
+    .UserCardWrapper{
+        font-size: 16px;   
+    }
+    .UserReasonContent{
+        font-size: 15px;
+        width: 35vw;
+    }
+    .approvalStatus{
+        font-size: 14px;
+        width: 50%;
+        margin-right: 0.5vw;
+    }    
+    .deleteApproval {
+        width: 50%;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 520px) {
+
+    /* change here */
+    
+    .UserLeft{  
+        width: 55%;
+    }
+    .UserCardWrapper{
+        /* height: 24vh; */
+        font-size: 14px;   
+    }
+    .UserReasonContent{
+        font-size: 13px;
+        width: 35vw;
+    }
+
+    .approvalStatus{
+        font-size: 12px;
+        width: 50%;
+        height: 65%;
+        margin-right: 0.5vw;
+    }    
+    .deleteApproval {
+        height: 65%;
+        width: 45%;
+    }
+  }
+
+
+  
+  @media only screen and (max-width: 420px) {
+
+    /* change here */
+    .UserCardWrapper{
+        /* height: 24vh; */
+        /* width: 90vw; */
+        font-size: 13px;   
+    }
+    
+    .UserLeft{  
+        width: 55%;
+    }
+
+    .UserReasonContent{
+        font-size: 12px;
+        width: 35vw;
+    }
+
+    .approvalStatus{
+        font-size: 11px;
+        width: 50%;
+        height: 62%;
+        margin-right: 0.5vw;
+    }    
+    .deleteApproval {
+        height: 62%;
+        width: 45%;
+    }
+  }

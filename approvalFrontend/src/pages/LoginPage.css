@@ -38,7 +38,22 @@ body{
     background-color: #000722;
     font-family: 'Poppins';
     transition: all 0.3s ease-in-out;
-    overflow-x: hidden;
+    /* overflow-x: hidden !important; */
+  }
+  
+html,body{
+  overflow-x: hidden !important;
+}
+
+/* .leaveportalImg{
+  width: 50vw;
+  height: 10vh;
+} */
+
+.leaveportalImg img{
+    /* height: 20vh; */
+    margin-top: 10vh;
+    width: 25vw;
 }
 
 
@@ -79,7 +94,7 @@ body{
     border: none;
     background-color: #e4ebebc5 !important;
     font-size: 22px;
-    width: 6.5vw;
+    width: 8vw;
     height: 5.5vh;
     border-radius:15px ;
     transform: scale(1);
@@ -93,6 +108,20 @@ body{
     background-color: rgba(220, 220, 220, 0.874);
     box-shadow:  1px 2px 3px 2px rgba(60, 60, 60, 0.581);
 
+}
+
+.formWrapper a{
+  color : #6948a4;
+  cursor: pointer;
+  font-size: 26px;
+}
+/* style={{color:'#6948a4',cursor:'pointer',fontSize:'26px'}} */
+
+.invalidText{
+  margin-left: 44vw;
+  color:#6948a4;
+  cursor: pointer;
+  font-size: 25px;
 }
 
 ::-webkit-scrollbar {
@@ -117,4 +146,186 @@ body{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #001b87;
+}
+
+@media only screen and (min-width: 2000px) {
+  .formWrapper img{
+    width: 40vw;
+  }
+  .form{
+    font-size: 90px;
+    width: 40vw;
+  }
+  .form input {
+     font-size: 60px;
+    width: 30vw;
+  }
+
+  .form button{
+     font-size: 50px;
+    width: 10vw;
+  }
+   .formWrapper a{
+      font-size: 70px;
+   }
+
+  .invalidText{
+     font-size: 70px !important;
+    margin-left: 43vw;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .form{
+    width: 40vw;
+  }
+
+  
+
+  .form input {
+    width: 30vw;
+  }
+
+  .form button{
+    width: 10vw;
+  }
+
+  .invalidText{
+    margin-left: 43vw;
+  }
+
+  .leaveportalImg img{
+    width: 35vw;
+  }
+
+}
+
+
+@media only screen and (max-width: 920px) {
+  .form{
+    width: 45vw;
+  }
+
+
+  .form input {
+    width: 35vw;
+  }
+
+  .form button{
+    width: 15vw;
+  }
+
+  .invalidText{
+    margin-left: 40vw;
+  }
+
+  .leaveportalImg img{
+    width: 45vw;
+  }
+}
+
+
+
+@media only screen and (max-width: 720px) {
+  .form{
+    font-size: 25px;
+    width: 55vw;
+  }
+
+
+  .form input {
+    font-size: 20px;
+    width: 40vw;
+  }
+
+  .form button{
+    font-size: 20px;
+    width: 15vw;
+  }
+
+  .invalidText{
+    font-size: 20px;
+    margin-left: 37vw;
+  }
+
+  .leaveportalImg img{
+    margin-top: 7vh;
+    width: 55vw;
+  }
+
+}
+
+
+@media only screen and (max-width: 620px) {
+  .form{
+    width: 60vw;
+  }
+
+
+  .form input {
+    font-size: 18px;
+    width: 45vw;
+  }
+
+  .form button{
+    width: 20vw;
+  }
+
+  .invalidText{
+    margin-left: 34vw;
+  }
+
+  .leaveportalImg img{
+    width: 60vw;
+  }
+
+}
+
+
+@media only screen and (max-width: 420px) {
+
+  .invalidText{
+    margin-left: 25vw;
+  }
+
+  .leaveportalImg img{
+    width: 70vw;
+  }
+
+  .form button{
+    width: 25vw;
+  }
+  .formWrapper a{
+    font-size: 20px;
+ }
+}
+
+
+@media only screen and (max-width: 320px) {
+  .form {
+    width: 85vw;
+  }
+  .form input{
+    width: 75vw;
+  }
+
+  .invalidText{
+    font-size: 16px;
+  }
+
+  .leaveportalImg img{
+    font-size: 16px;
+
+  }
+
+  .form button{
+    font-size: 16px;
+
+  }
+  .formWrapper a{
+    font-size: 16px;
+
+ }
+
 }
