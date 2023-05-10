@@ -369,6 +369,7 @@
     }
 
     .addbtn{
+
       width: 14vw;
     }
     
@@ -420,6 +421,7 @@
       position: absolute;
       right: 12vw;
       top: 23.8vh;
+      border-radius: 30px;
     }
 
     #dialog-content {
@@ -585,6 +587,7 @@
 
 
     @media only screen and (max-width: 450px) {
+
 
       .adminMode{
         display: none;

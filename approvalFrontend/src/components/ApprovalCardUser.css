@@ -301,3 +301,65 @@
         width: 50%;
     }
   }
+
+
+  
+  @media only screen and (max-width: 390px) {
+
+    .UserLeft{
+        width: 60%;
+    }
+
+    .UserRight{
+        margin-right: 2vw;
+        width:40%;
+    }
+
+
+    .approvalStatus{
+        font-size: 10px;
+        width: 50%;
+        height: 60%;
+        margin-right: 0.8vw;
+    }    
+    .deleteApproval {
+        height: 60%;
+        width: 50%;
+    }
+  }
+
+  
+  @media only screen and (max-width: 320px) {
+
+    .UserCardWrapper{
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .UserReasonContent{
+        width: 60vw;
+    }
+
+    .UserLeft{
+        width: 80%;
+    }
+
+    .UserRight{
+        width:60%;
+        align-items: start;
+        height: 10vh;
+    }
+
+
+    .approvalStatus{
+        font-size: 13px;
+        width: 50%;
+        height: 90%;
+        margin-right: 3vw;
+    }    
+    .deleteApproval {
+        height: 90%;
+        width: 50%;
+    }
+  }
