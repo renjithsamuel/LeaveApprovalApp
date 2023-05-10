@@ -264,3 +264,40 @@
         width: 45%;
     }
   }
+
+
+  @media only screen and (max-width: 376px) {
+
+    /* change here */
+    .UserCardWrapper{
+        /* height: 24vh; */
+        /* width: 90vw; */
+        font-size: 12px;   
+    }
+    
+    .UserLeft{  
+        width: 50%;
+        padding: 1.7vh;
+    }
+    .UserRight{  
+        width: 33vw;
+       margin-right: 2vw;
+    }
+
+    .UserReasonContent{
+        font-size: 12px;
+        width: 37vw;
+        margin-left:1vw ;
+    }
+
+    .approvalStatus{
+        font-size: 11px;
+        width: 55%;
+        height: 62%;
+        margin-right: 0.8vw;
+    }    
+    .deleteApproval {
+        height: 62%;
+        width: 50%;
+    }
+  }

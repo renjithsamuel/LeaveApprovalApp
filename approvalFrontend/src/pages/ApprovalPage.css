@@ -155,12 +155,11 @@
   .sortBtnWrapper{
     display: flex;
     justify-content: center;
-
   }
 
   .sortBtn{
     background-color: #6a48a442;
-    border-radius: 15px;
+    border-radius: 30px;
     width: 20vw;
     height: 6vh;
     display: flex;
@@ -423,6 +422,14 @@
       top: 23.8vh;
     }
 
+    #dialog-content {
+      width: 50vw;
+      height: 65vh;
+    }
+
+    #dialog-content button {
+      padding: 13px;
+    }
   }
 
 
@@ -460,6 +467,15 @@
       width: 82vw;
     }
 
+    #dialog-content {
+      width: 50vw;
+      height: 65vh;
+    }
+
+    #dialog-content button {
+      padding: 13px;
+    }
+
   }
 
 
@@ -493,6 +509,11 @@
     
     .adminWrapper,.userWrapper,.userAllWrapper{
       width: 83vw;
+    }
+
+    #dialog-content {
+      width: 60vw;
+      height: 65vh;
     }
 
   }
@@ -607,6 +628,16 @@
 
       .adminWrapper,.userWrapper,.userAllWrapper{
         width: 87vw;
+      }
+
+
+      #dialog-content {
+        width: 60vw;
+        height: 65vh;
+      }
+  
+      #dialog-content button {
+        padding: 13px;
       }
 
     }
