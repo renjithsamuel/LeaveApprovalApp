@@ -357,6 +357,8 @@
 
   @media only screen and (max-width: 1200px) {
 
+
+
     .approvalHeader{
       font-size: 35px;
     }
@@ -496,7 +498,9 @@
   }
 
   @media only screen and (max-width: 520px) {
-
+    .verticalLine{
+      height: 4vh;
+    }
 
     /* changes here */
     .loading{
