@@ -276,7 +276,7 @@
   }
 
 
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 420px) {
 
     .adminleft{
         width: 80%;
