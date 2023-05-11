@@ -19,7 +19,8 @@ function ApprovalPage({user, handleLogOut,approvals, setApprovals,approvalStatus
         if(currentDisplay=='pending')
             setApprovalsSet(approvals.filter((elem)=>(elem.approval==='pending')));
         else
-            setApprovalsSet(approvals.filter((elem)=>(elem.approval!=='pending')))
+            setApprovalsSet(approvals.filter((elem)=>(elem.approval!=='pending')));
+        // setApprovalsSet(approvalsSet.sort((a, b) => new Date(a.fromDate) - new Date(b.fromDate)));
         // setTimeout(() => {
             setIsLoading(false);
         // }, 3000);

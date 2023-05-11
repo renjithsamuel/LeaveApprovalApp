@@ -8,6 +8,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [inValidText, setInValidText] = useState("");
+  const [serverConnected, setServerConnected] = useState("Connecting to server");
   const [isLogin, setIsLogin] = useState(1);
   const [approvals,setApprovals] = useState([]);
  
@@ -55,7 +56,7 @@ function App() {
     if(!(JSON.stringify(currentUser) === "{}")){
       handleApprovals().then((response)=>{
         // setApprovals(response.data);
-        setApprovals(response.data);
+        setApprovals(response.data.sort((a, b) => new Date(a.fromDate) - new Date(b.fromDate)))
       });
     }
 
@@ -103,6 +104,13 @@ function App() {
 
   //get Users
   useEffect(()=>{
+      async function getHealthStatus(){
+         return await sendHTTPRequest('https://leaveportal.onrender.com/api/v1/health','GET')
+      }
+      getHealthStatus().then((v)=> {if(v.status=='success')setServerConnected('Server connected!')
+                                    else setServerConnected('Try again later!')
+                                    });
+
       async function getUsers(){
          return await sendHTTPRequest('https://leaveportal.onrender.com/api/v1/user','GET')
       }
@@ -178,8 +186,8 @@ function App() {
           :<>
           <LoginPage isLogin={isLogin} handlers={[handleLogin, handleRegsiter, toggleForms]} refs={[username, password]}/>   
           {inValidText?<p className="invalidText" >{inValidText}</p>:null}
+          {<p className="serverConnected" >{serverConnected}</p>}
         </>
-          
         }
     </>
   );

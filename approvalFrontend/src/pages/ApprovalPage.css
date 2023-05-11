@@ -356,6 +356,11 @@
 
   @media only screen and (max-width: 1200px) {
 
+      
+  .ntd{
+    font-size:32px;
+    margin-left: 25vw;
+  }
 
 
     .approvalHeader{
@@ -393,6 +398,9 @@
 
 
     /* changes here */
+
+
+
 
     .sortBtnWrapper{
       margin-left: 12vw;
@@ -437,6 +445,9 @@
 
 
   @media only screen and (max-width: 720px) {
+
+              
+
 
     .approvalHeader{
       font-size: 35px;
@@ -485,6 +496,11 @@
   
   @media only screen and (max-width: 620px) {
 
+    .ntd{
+      font-size:30px;
+      margin-left: 22vw;
+    }
+
     .backgroundImg img{
       opacity: 0.3;
      }
@@ -519,6 +535,11 @@
   }
 
   @media only screen and (max-width: 520px) {
+
+    .ntd{
+      font-size:28px;
+      margin-left: 20vw;
+    }
     .verticalLine{
       height: 4vh;
     }
@@ -585,6 +606,11 @@
 
 
     @media only screen and (max-width: 450px) {
+
+      .ntd{
+        font-size:28px;
+        margin-left: 16vw;
+      }
 
 
       .adminMode{

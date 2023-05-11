@@ -124,6 +124,13 @@ html,body{
   font-size: 25px;
 }
 
+.serverConnected{
+  margin-left: 43.5vw;
+  color:#6948a4;
+  font-size: 20px;
+  cursor: default;
+}
+
 ::-webkit-scrollbar {
   /* display: none; */
   width: 2px;
@@ -173,6 +180,8 @@ html,body{
      font-size: 70px !important;
     margin-left: 43vw;
   }
+
+  
 }
 
 @media only screen and (max-width: 1200px) {
@@ -199,6 +208,10 @@ html,body{
     width: 35vw;
   }
 
+  .serverConnected{
+    margin-left: 42vw;
+  }
+
 }
 
 
@@ -222,6 +235,10 @@ html,body{
 
   .leaveportalImg img{
     width: 45vw;
+  }
+
+  .serverConnected{
+    margin-left: 39vw;
   }
 }
 
@@ -247,6 +264,10 @@ html,body{
   .invalidText{
     font-size: 20px;
     margin-left: 37vw;
+  }
+
+  .serverConnected{
+    margin-left: 36vw;
   }
 
   .leaveportalImg img{
@@ -276,10 +297,22 @@ html,body{
     margin-left: 34vw;
   }
 
+  .serverConnected{
+    margin-left: 33vw;
+  }
+
   .leaveportalImg img{
     width: 60vw;
   }
 
+}
+
+
+@media only screen and (max-width: 520px) {
+
+  .serverConnected{
+    margin-left: 30vw;
+  }
 }
 
 
@@ -300,6 +333,9 @@ html,body{
     margin-left: 25vw;
   }
 
+  .serverConnected{
+    margin-left: 24vw;
+  }
   .leaveportalImg img{
     width: 70vw;
   }
@@ -323,6 +359,10 @@ html,body{
 
   .invalidText{
     font-size: 16px;
+  }
+
+  .serverConnected{
+    font-size: 15px;
   }
 
   .leaveportalImg img{
